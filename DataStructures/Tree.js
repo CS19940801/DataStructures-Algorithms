@@ -8,6 +8,16 @@
 // index = 1 左 3 右4 父0
 // index = 4 左9 右10 父6
 
+// 二叉搜素树 BST BinarySearchTree
+// 设当前节点为n 左子节点<n 右子节点>n
+export class Node {
+    constructor(key) {
+        this.key = key
+        this.left = null;
+        this.right = null;
+    }
+}
+
 // 堆 特殊的二叉树
 
 // 斐波那契数列
