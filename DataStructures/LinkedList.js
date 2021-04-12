@@ -97,3 +97,19 @@ console.log(`lk1链表`, lk1);
 export {
     LinkedList
 }
+
+// leetcode两数相加
+// let l1 = [2, 4, 3], l2 = [5, 6, 4]
+let l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]
+// 输出：[7, 0, 8]
+// 解释：342 + 465 = 807.
+var addTwoNumbers = function (l1, l2) {
+    let n1 = Number(l1.join(''))
+    let n2 = Number(l2.join(''))
+    console.log(`--n1,n2--`, n1,n2);
+    let sum = n1 + n2
+    let res = sum.toString().split('').reverse()
+    return res
+};
+
+console.log(`--addTwoNumbers--`, addTwoNumbers(l1,l2));
