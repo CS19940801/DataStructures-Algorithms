@@ -10,9 +10,12 @@ function createRanAry(){
     for (let i = 0; i < highest; i++) {
         Ary[i] = i
     }
+     
+    target = Math.floor(Math.random() * 1000)
 }
 
-export let target = 3 
+export let target = 1
+createRanAry() //生成随机 ary/target
 
 export function showRange (ary,low,high) {
     console.log(`范围：${low}-${high}`);   
@@ -46,13 +49,14 @@ export function binarySearch(ary,target){
     let high = ary.length - 1
     
     // while( target > ary[low] && target > ary[high]) {
-    while( low < high ) {
-        let mid = Math.floor(high - low / 2)
-        console.log(`搜索范围：${showRange(Ary,low,high)}`);
-        if( target > ary[mid] ){
+    while (low <= high && target >= ary[low] && target <= ary[high] ) {
+        let mid = Math.floor((high + low) / 2)
+        let midVal = ary[mid]
+        console.log(`搜索范围：${showRange(Ary, low, high)}`, `low:${low}`, `mid:${mid}` , `high:${high}`, `ary[mid]:${ary[mid]}`);
+        if( target > midVal ){
             low = mid + 1
-        }else if(target < ary[mid]) {
-            high = mid -1
+        }else if(target < midVal) {
+            high = mid - 1
         }else {
             console.log(`计算用时：${new Date().getTime() - beginTime}`);
             return mid
@@ -61,7 +65,6 @@ export function binarySearch(ary,target){
 
     return 'no here target'
 }
-createRanAry()
 showCal('二分搜索', binarySearch)
 
 // 内插搜索 (魔术搜索)
@@ -79,7 +82,7 @@ export function interpolationSearch(ary,target) {
     let pos = -1
     let delta = -1 // 戴儿塔！
 
-    while( low <= high && (target >= low) && (target <= high)) {
+    while (low <= high && target >= ary[low] && target <= ary[high]) {
 
         delta = diffFn(target, ary[low]) / diffFn(ary[high], ary[low])
         pos = low + Math.floor((high -low)*delta)

@@ -54,16 +54,15 @@ export function countArrange(ary){
         }
     })
     
-
     console.log(`排序用时：${new Date().getTime() - beginTime}`);
     return ary
 }
 Ary = [5, 8, 7, 2, 1, 3, 9]
-Ary = [5,4,3,2,3,1]
+// Ary = [5,4,3,2,3,1]
 // count [0,1,1,2,1,1]
 // 
 
-console.log(`计数排序：after-countArrange：${countArrange(Ary)}`);
+console.log(`计数排序：after-countArrange：[${countArrange(Ary)}]`);
 
 // 洗牌
 export function flushArrange(ary) {
