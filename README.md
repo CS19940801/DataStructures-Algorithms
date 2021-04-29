@@ -4,4 +4,4 @@
 - 2.Queue 队列
 
 - Algorithms 算法
-- 1.twoSum 两数只和
+- 1.twoSum 两数之和
